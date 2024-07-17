@@ -46,7 +46,7 @@ void MainWindow::setupUi()
     statusLabel->setStyleSheet("QLabel { color : red; }");
     layout->addWidget(statusLabel);
 
-    developedByLabel = new QLabel("Разработано: ЗАО МНИТИ", centralWidget);
+    developedByLabel = new QLabel("Разработано: Игорь Жосан", centralWidget);
     developedByLabel->setStyleSheet("QLabel { font-size: 10px; color: gray; }");
     layout->addWidget(developedByLabel);
 
