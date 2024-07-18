@@ -210,6 +210,18 @@ debug/moc_mainwindow.cpp: ../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QMai
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSerialPort/qserialportglobal.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSerialPort/QSerialPortInfo \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSerialPort/qserialportinfo.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QTimer \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qtimer.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QTextEdit \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qframe.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextdocument.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextoption.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QComboBox \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qcombobox.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
@@ -222,31 +234,20 @@ debug/moc_mainwindow.cpp: ../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QMai
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qstyle.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qtabbar.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qrubberband.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qframe.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QPushButton \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QTextEdit \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextdocument.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextcursor.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextformat.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qpen.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QStatusBar \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qstatusbar.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlayout.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QListWidget \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlistwidget.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlistview.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QLabel \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlabel.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QTimer \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qtimer.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QStatusBar \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qstatusbar.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QByteArray \
 		mainwindow.h \
 		debug/moc_predefs.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/bin/moc.exe
@@ -378,6 +379,18 @@ debug/main.o: main.cpp mainwindow.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSerialPort/qserialportglobal.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSerialPort/QSerialPortInfo \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSerialPort/qserialportinfo.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QTimer \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qtimer.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QTextEdit \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qframe.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextdocument.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextoption.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QComboBox \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qcombobox.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
@@ -390,31 +403,20 @@ debug/main.o: main.cpp mainwindow.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qstyle.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qtabbar.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qrubberband.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qframe.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QPushButton \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QTextEdit \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextdocument.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextcursor.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextformat.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qpen.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QStatusBar \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qstatusbar.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlayout.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QListWidget \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlistwidget.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlistview.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QLabel \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlabel.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QTimer \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qtimer.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QStatusBar \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qstatusbar.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QByteArray \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QApplication \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qapplication.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -534,6 +536,18 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSerialPort/qserialportglobal.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSerialPort/QSerialPortInfo \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSerialPort/qserialportinfo.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QTimer \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qtimer.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QTextEdit \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qframe.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextdocument.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextoption.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QComboBox \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qcombobox.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
@@ -546,37 +560,31 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qstyle.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qtabbar.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qrubberband.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qframe.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QPushButton \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QTextEdit \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qtextedit.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextdocument.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextcursor.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextformat.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qpen.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QListWidget \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlistwidget.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlistview.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QLabel \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlabel.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QStatusBar \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qstatusbar.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QByteArray \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlayout.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QLabel \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlabel.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QTimer \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qtimer.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qbasictimer.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QTextCodec \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qtextcodec.h \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QHBoxLayout \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QMessageBox \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qmessagebox.h \
 		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qdialog.h \
-		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QDebug
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QListWidgetItem
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o mainwindow.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 

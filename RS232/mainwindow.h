@@ -2,15 +2,16 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtSerialPort/QSerialPort>
-#include <QtSerialPort/QSerialPortInfo>
+#include <QSerialPort>
+#include <QSerialPortInfo>
+#include <QTimer>
+#include <QTextEdit>
 #include <QComboBox>
 #include <QPushButton>
-#include <QTextEdit>
-#include <QStatusBar>
-#include <QVBoxLayout>
+#include <QListWidget>
 #include <QLabel>
-#include <QTimer>
+#include <QStatusBar>
+#include <QByteArray>
 
 class MainWindow : public QMainWindow
 {
@@ -25,21 +26,35 @@ private slots:
     void checkConnection();
     void readData();
     void handleError(QSerialPort::SerialPortError error);
+    void updatePortsInfo();
+    void increaseFontSize();
+    void decreaseFontSize();
+    void showBinary();
+    void showOctal();
+    void showDecimal();
+    void showHex();
 
 private:
-    QSerialPort *serialPort;
-    QComboBox *portComboBox;
-    QComboBox *baudRateComboBox;
-    QPushButton *connectButton;
-    QTextEdit *textEdit;
-    QStatusBar *statusBar;
-    QLabel *statusLabel;
-    QLabel *developedByLabel;
-    QTimer *connectionCheckTimer;
-
     void setupUi();
     void fillPortsInfo();
     void updateConnectionStatus(bool connected);
+
+    QSerialPort *serialPort;
+    QTimer *connectionCheckTimer;
+    QTimer *portsUpdateTimer;
+    QTextEdit *textEdit;
+    QComboBox *portComboBox;
+    QComboBox *baudRateComboBox;
+    QPushButton *connectButton;
+    QListWidget *availablePortsList;
+    QListWidget *usedPortsList;
+    QLabel *statusLabel;
+    QLabel *availablePortsLabel;
+    QLabel *usedPortsLabel;
+    QLabel *developedByLabel;
+    QStatusBar *statusBar;
+    QByteArray textData;
+    int currentFontSize;
 };
 
 #endif // MAINWINDOW_H
