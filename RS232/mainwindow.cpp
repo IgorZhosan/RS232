@@ -46,7 +46,7 @@ void MainWindow::setupUi()
     statusLabel->setStyleSheet("QLabel { color : red; }");
     layout->addWidget(statusLabel);
 
-    developedByLabel = new QLabel("Разработано: ЗАО МНИТИ", centralWidget);
+    developedByLabel = new QLabel("Разработано: Игорь Жосан", centralWidget);
     developedByLabel->setStyleSheet("QLabel { font-size: 10px; color: gray; }");
     layout->addWidget(developedByLabel);
 
@@ -130,12 +130,8 @@ void MainWindow::checkConnection()
 void MainWindow::readData()
 {
     const QByteArray data = serialPort->readAll();
-    QString hexData = data.toHex().toUpper(); // Конвертируем данные в 16-ричную систему счисления
-    QString formattedHexData;
-    for (int i = 0; i < hexData.length(); i += 2) {
-        formattedHexData += hexData.mid(i, 2) + " ";
-    }
-    textEdit->append(formattedHexData.trimmed());
+    QString text = QTextCodec::codecForMib(106)->toUnicode(data);
+    textEdit->append(text);
 }
 
 void MainWindow::handleError(QSerialPort::SerialPortError error)
