@@ -2,15 +2,15 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtSerialPort/QSerialPort>
-#include <QtSerialPort/QSerialPortInfo>
+#include <QSerialPort>
+#include <QSerialPortInfo>
+#include <QTimer>
 #include <QComboBox>
 #include <QPushButton>
 #include <QTextEdit>
-#include <QStatusBar>
-#include <QVBoxLayout>
 #include <QLabel>
-#include <QTimer>
+#include <QListWidget>
+#include <QStatusBar>
 
 class MainWindow : public QMainWindow
 {
@@ -25,21 +25,28 @@ private slots:
     void checkConnection();
     void readData();
     void handleError(QSerialPort::SerialPortError error);
+    void updatePortsInfo();
 
 private:
+    void setupUi();
+    void fillPortsInfo();
+    void updateConnectionStatus(bool connected);
+
     QSerialPort *serialPort;
+    QTimer *connectionCheckTimer;
+    QTimer *portsUpdateTimer;
+
     QComboBox *portComboBox;
     QComboBox *baudRateComboBox;
     QPushButton *connectButton;
     QTextEdit *textEdit;
-    QStatusBar *statusBar;
     QLabel *statusLabel;
     QLabel *developedByLabel;
-    QTimer *connectionCheckTimer;
-
-    void setupUi();
-    void fillPortsInfo();
-    void updateConnectionStatus(bool connected);
+    QLabel *availablePortsLabel;
+    QLabel *usedPortsLabel;
+    QListWidget *availablePortsList;
+    QListWidget *usedPortsList;
+    QStatusBar *statusBar;
 };
 
 #endif // MAINWINDOW_H

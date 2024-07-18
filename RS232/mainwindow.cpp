@@ -1,12 +1,15 @@
 #include "mainwindow.h"
-#include <QTextCodec>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QMessageBox>
 #include <QDebug>
+#include <QListWidgetItem>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , serialPort(new QSerialPort(this))
     , connectionCheckTimer(new QTimer(this))
+    , portsUpdateTimer(new QTimer(this)) // Инициализация нового таймера
 {
     setupUi();
     fillPortsInfo();
@@ -14,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::readData);
     connect(serialPort, &QSerialPort::errorOccurred, this, &MainWindow::handleError);
     connect(connectionCheckTimer, &QTimer::timeout, this, &MainWindow::checkConnection);
+    connect(portsUpdateTimer, &QTimer::timeout, this, &MainWindow::updatePortsInfo); // Подключение таймера обновления портов
+    portsUpdateTimer->start(2000); // Обновляем информацию о портах каждые 2 секунды
 }
 
 MainWindow::~MainWindow()
@@ -22,33 +27,58 @@ MainWindow::~MainWindow()
 
 void MainWindow::setupUi()
 {
-    this->resize(400, 300);
+    this->resize(600, 400);
 
     QWidget *centralWidget = new QWidget(this);
-    QVBoxLayout *layout = new QVBoxLayout(centralWidget);
+    QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
+
+    QHBoxLayout *comboLayout = new QHBoxLayout();
 
     portComboBox = new QComboBox(centralWidget);
-    layout->addWidget(portComboBox);
+    comboLayout->addWidget(portComboBox);
 
     baudRateComboBox = new QComboBox(centralWidget);
     baudRateComboBox->addItems({"9600", "19200", "38400", "57600", "115200"});
-    layout->addWidget(baudRateComboBox);
+    comboLayout->addWidget(baudRateComboBox);
 
     connectButton = new QPushButton("Подключиться", centralWidget);
-    layout->addWidget(connectButton);
+    comboLayout->addWidget(connectButton);
     connect(connectButton, &QPushButton::clicked, this, &MainWindow::on_connectButton_clicked);
+
+    mainLayout->addLayout(comboLayout);
+
+    QHBoxLayout *portsLayout = new QHBoxLayout();
+
+    QVBoxLayout *availablePortsLayout = new QVBoxLayout();
+    availablePortsLabel = new QLabel("Доступные порты", centralWidget);
+    availablePortsList = new QListWidget(centralWidget);
+    availablePortsList->setFixedSize(200, 50);
+    availablePortsLayout->addWidget(availablePortsLabel);
+    availablePortsLayout->addWidget(availablePortsList);
+
+    QVBoxLayout *usedPortsLayout = new QVBoxLayout();
+    usedPortsLabel = new QLabel("Недоступные порты", centralWidget);
+    usedPortsList = new QListWidget(centralWidget);
+    usedPortsList->setFixedSize(200, 50);
+    usedPortsLayout->addWidget(usedPortsLabel);
+    usedPortsLayout->addWidget(usedPortsList);
+
+    portsLayout->addLayout(availablePortsLayout);
+    portsLayout->addLayout(usedPortsLayout);
+
+    mainLayout->addLayout(portsLayout);
 
     textEdit = new QTextEdit(centralWidget);
     textEdit->setReadOnly(true);
-    layout->addWidget(textEdit);
+    mainLayout->addWidget(textEdit);
 
     statusLabel = new QLabel("Отключено", centralWidget);
     statusLabel->setStyleSheet("QLabel { color : red; }");
-    layout->addWidget(statusLabel);
+    mainLayout->addWidget(statusLabel);
 
     developedByLabel = new QLabel("Разработано: Игорь Жосан", centralWidget);
     developedByLabel->setStyleSheet("QLabel { font-size: 10px; color: gray; }");
-    layout->addWidget(developedByLabel);
+    mainLayout->addWidget(developedByLabel);
 
     statusBar = new QStatusBar(this);
     this->setStatusBar(statusBar);
@@ -59,17 +89,27 @@ void MainWindow::setupUi()
 void MainWindow::fillPortsInfo()
 {
     portComboBox->clear();
-    // Добавление статических портов COM1-COM10
-    for (int i = 1; i <= 10; ++i) {
-        portComboBox->addItem("COM" + QString::number(i));
-    }
+    availablePortsList->clear();
+    usedPortsList->clear();
 
-    // Опционально: можете добавить динамическое обнаружение доступных портов
     const auto infos = QSerialPortInfo::availablePorts();
     for (const QSerialPortInfo &info : infos) {
-        if (!portComboBox->findText(info.portName())) {
-            portComboBox->addItem(info.portName());
+        QString portName = info.portName();
+        QString itemText = portName;
+        QSerialPort testPort;
+        testPort.setPort(info);
+        if (testPort.open(QIODevice::ReadWrite)) {
+            itemText += " (Свободен)";
+            QListWidgetItem *item = new QListWidgetItem(portName, availablePortsList);
+            item->setForeground(QColor("#008000")); // Темно-зеленый цвет
+            testPort.close();
+        } else {
+            itemText += " (Занят)";
+            QString baudRate = QString::number(testPort.baudRate());
+            QListWidgetItem *item = new QListWidgetItem(portName + " " + baudRate + " (Занят)", usedPortsList);
+            item->setForeground(Qt::red);
         }
+        portComboBox->addItem(itemText, portName);
     }
 }
 
@@ -82,7 +122,7 @@ void MainWindow::on_connectButton_clicked()
         updateConnectionStatus(false);
         connectionCheckTimer->stop();
     } else {
-        serialPort->setPortName(portComboBox->currentText());
+        serialPort->setPortName(portComboBox->currentData().toString());
         serialPort->setBaudRate(baudRateComboBox->currentText().toInt());
         serialPort->setDataBits(QSerialPort::Data8);
         serialPort->setParity(QSerialPort::NoParity);
@@ -130,8 +170,12 @@ void MainWindow::checkConnection()
 void MainWindow::readData()
 {
     const QByteArray data = serialPort->readAll();
-    QString text = QTextCodec::codecForMib(106)->toUnicode(data);
-    textEdit->append(text);
+    QString hexData = data.toHex().toUpper(); // Конвертируем данные в 16-ричную систему счисления
+    QString formattedHexData;
+    for (int i = 0; i < hexData.length(); i += 2) {
+        formattedHexData += hexData.mid(i, 2) + " ";
+    }
+    textEdit->append(formattedHexData.trimmed());
 }
 
 void MainWindow::handleError(QSerialPort::SerialPortError error)
@@ -153,5 +197,21 @@ void MainWindow::updateConnectionStatus(bool connected)
     } else {
         statusLabel->setText("Отключено");
         statusLabel->setStyleSheet("QLabel { color : red; }");
+    }
+}
+
+void MainWindow::updatePortsInfo()
+{
+    static QList<QString> previousPorts;
+
+    const auto infos = QSerialPortInfo::availablePorts();
+    QList<QString> currentPorts;
+    for (const QSerialPortInfo &info : infos) {
+        currentPorts.append(info.portName());
+    }
+
+    if (currentPorts != previousPorts) {
+        fillPortsInfo();
+        previousPorts = currentPorts;
     }
 }
