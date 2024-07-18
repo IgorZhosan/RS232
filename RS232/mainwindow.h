@@ -5,12 +5,13 @@
 #include <QSerialPort>
 #include <QSerialPortInfo>
 #include <QTimer>
+#include <QTextEdit>
 #include <QComboBox>
 #include <QPushButton>
-#include <QTextEdit>
-#include <QLabel>
 #include <QListWidget>
+#include <QLabel>
 #include <QStatusBar>
+#include <QByteArray>
 
 class MainWindow : public QMainWindow
 {
@@ -26,6 +27,12 @@ private slots:
     void readData();
     void handleError(QSerialPort::SerialPortError error);
     void updatePortsInfo();
+    void increaseFontSize();
+    void decreaseFontSize();
+    void showBinary();
+    void showOctal();
+    void showDecimal();
+    void showHex();
 
 private:
     void setupUi();
@@ -35,18 +42,19 @@ private:
     QSerialPort *serialPort;
     QTimer *connectionCheckTimer;
     QTimer *portsUpdateTimer;
-
+    QTextEdit *textEdit;
     QComboBox *portComboBox;
     QComboBox *baudRateComboBox;
     QPushButton *connectButton;
-    QTextEdit *textEdit;
-    QLabel *statusLabel;
-    QLabel *developedByLabel;
-    QLabel *availablePortsLabel;
-    QLabel *usedPortsLabel;
     QListWidget *availablePortsList;
     QListWidget *usedPortsList;
+    QLabel *statusLabel;
+    QLabel *availablePortsLabel;
+    QLabel *usedPortsLabel;
+    QLabel *developedByLabel;
     QStatusBar *statusBar;
+    QByteArray textData;
+    int currentFontSize;
 };
 
 #endif // MAINWINDOW_H
